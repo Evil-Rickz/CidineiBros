@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body {
+    background-color: green;
+}
+.game-board {
+    width: 100vw;
+    height: 80vh;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(172, 249, 255);
+}
+
+.background {
+    height: 20vh;
+    overflow: hidden;
+    background: url(media/textura-terra.jpg);
+    background-size: 100vh;
+    animation: terra-animation 5s linear;
+}
+
+.terra {
+    width: 50vw;
+    background: repeat;
+    position: relative;
+    animation: terra-animation 5s infinite linear  ;
+}
+
+.clouds {
+    height: 48vh;
+    position: absolute;
+    top: 4vh;
+    animation: sky-animation 20s infinite linear;
+    z-index: 1;
+}
+
+.pipe {
+    height: 16vh;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    animation: pipe-animation 2s infinite linear;
+    z-index: 200;
+}
+
+.cidinei {
+    width: 23vh;
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+}
+
+.jumping {
+    width: 23vh;
+    position: absolute;
+    bottom: 0%;
+}
+
+.jump {
+    animation: jump 500ms infinite ease-out;
+}
+
+.disable {
+    display: none;
+}
+@keyframes sky-animation {
+    from {
+        right: -315px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes terra-animation {
+    from {
+        right: -100vw;
+    }
+    to {
+        right: 100vw;
+    }
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    30% {
+        bottom: 30vh;
+    }
+
+    50% {
+        bottom: 30vh;
+    }
+
+    70% {
+        bottom: 30vh;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
